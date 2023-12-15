@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diet Plan Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .form-section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        input[type="number"], select, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        h3 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Configuration</h1>
+        <form id="dietForm" action="/" method="post">
+            <div class="form-section">
+                <!-- Personal Information Inputs -->
+                <label>Gender:</label>
+                <select name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <label>Weight (kg):</label>
+                <input type="number" name="weight" required>
+
+                <label>Age:</label>
+                <input type="number" name="age" required>
+
+                <label>Height (cm):</label>
+                <input type="number" name="height" required>
+
+                <label>Goal:</label>
+                <select name="goal">
+                    <option value="Fat Loss">Fat Loss</option>
+                    <option value="Muscle Gain">Muscle Gain</option>
+                    <option value="Maintenance">Maintenance</option>
+                </select>
+
+                <label>Goal Amount Per Week (g):</label>
+                <input type="number" name="goal_amount_per_week" required>
+
+                <label>Diet Preference:</label>
+                <select name="diet_preference">
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                </select>
+
+                <label>Activity Level:</label>
+                <select name="activity_level">
+                    <option value="Sedentary">Sedentary</option>
+                    <option value="Light">Light</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Active">Active</option>
+                    <option value="Very Active">Very Active</option>
+                </select>
+
+                <label>Number of Meals:</label>
+                <input type="number" name="number_of_meals" min="1" max="6" required>
+            </div>
+
+            <!-- Food Selection Sections -->
+            <h3>Protein Sources (Choose 3-6):</h3>
+            <div class="form-section">
+                <!-- Replace these with your actual protein source items -->
+                <!-- <input type="checkbox" name="likes" value="Chicken breast 100 grams" data-type="protein">Chicken Breast 100 grams<br> -->
+                <input type="checkbox" name="likes" value="Chicken breast 100 grams">Chicken Breast 100 grams<br>
+                <input type="checkbox" name="likes" value="Mutton raw">Mutton Raw<br>
+                <input type="checkbox" name="likes" value="Tilapia fish raw">Tilapia Fish Raw<br>
+                <input type="checkbox" name="likes" value="Tuna fish raw">Tuna Fish Raw<br>
+                <input type="checkbox" name="likes" value="Beef">Beef<br>
+                <input type="checkbox" name="likes" value="Boiled egg white">Boiled Egg White<br>
+                <input type="checkbox" name="likes" value="Boiled whole eggs">Boiled Whole Eggs<br>
+                <input type="checkbox" name="likes" value="Paneer">Paneer<br>
+                <input type="checkbox" name="likes" value="Tofu">Tofu<br>
+                <input type="checkbox" name="likes" value="Fat free Paneer">Fat Free Paneer<br>
+                <input type="checkbox" name="likes" value="Lentils">Lentils<br>
+                <input type="checkbox" name="likes" value="Black chana">Black Chana<br>
+                <input type="checkbox" name="likes" value="Soya chunk 50 grams">Soya Chunk 50 grams<br>
+                <input type="checkbox" name="likes" value="Kidney beans">Kidney Beans<br>
+                <!-- <input type="checkbox" name="likes" value="Mutton raw" data-type="protein">Mutton Raw<br> -->
+                <!-- Add more protein sources here -->
+            </div>
+
+            <h3>Carb Sources (Choose 3-6):</h3>
+            <div class="form-section">
+                <!-- Replace these with your actual carb source items -->
+                <!-- <input type="checkbox" name="likes" value="Boiled white rice 100 grams" data-type="carb">Boiled White Rice 100 grams<br>
+                <input type="checkbox" name="likes" value="Brown bread" data-type="carb">Brown Bread<br> -->
+                <input type="checkbox" name="likes" value="Boiled white rice 100 grams">Boiled White Rice 100 grams<br>
+                <input type="checkbox" name="likes" value="Brown bread">Brown Bread<br>
+                <input type="checkbox" name="likes" value="Chapathi">Chapathi<br>
+                <input type="checkbox" name="likes" value="Idly">Idly<br>
+                <input type="checkbox" name="likes" value="Dosa">Dosa<br>
+                <input type="checkbox" name="likes" value="Sweet Potato">Sweet Potato<br>
+                <input type="checkbox" name="likes" value="Fat free Milk 100 Ml">Fat Free Milk 100 Ml<br>
+                <input type="checkbox" name="likes" value="Oats raw">Oats Raw<br>
+                <input type="checkbox" name="likes" value="Upma">Upma<br>
+                <input type="checkbox" name="likes" value="Quinoa">Quinoa<br>
+                <input type="checkbox" name="likes" value="Fruit options (Watermelon, Apple, Pineapple, Papaya)">Fruit options (Watermelon, Apple, Pineapple, Papaya)<br>
+                <input type="checkbox" name="likes" value="Vegetable salad">Vegetable Salad<br>
+                <!-- Add more carb sources here -->
+            </div>
+
+            <h3>Fat Sources (Choose 3-6):</h3>
+            <div class="form-section">
+                <!-- Replace these with your actual fat source items -->
+                <!-- <input type="checkbox" name="likes" value="Butter 30 grams" data-type="fat">Butter 30 grams<br>
+                <input type="checkbox" name="likes" value="Almonds/Peanut 25 grams" data-type="fat">Almonds/Peanut 25 grams<br> -->
+                <input type="checkbox" name="likes" value="Full fat milk 100 ml">Full Fat Milk 100 ml<br>
+                <input type="checkbox" name="likes" value="Fried peanuts">Fried Peanuts<br>
+                <input type="checkbox" name="likes" value="Coconut oil 30 grams">Coconut Oil 30 grams<br>
+                <input type="checkbox" name="likes" value="Butter 30 grams">Butter 30 grams<br>
+                <input type="checkbox" name="likes" value="Ghee 30 grams">Ghee 30 grams<br>
+                <input type="checkbox" name="likes" value="Flax seeds 25 grams">Flax Seeds 25 grams<br>
+                <input type="checkbox" name="likes" value="Almonds/Peanut 25 grams">Almonds/Peanut 25 grams<br>
+        </div>
+                <!-- Add more fat sources here -->
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- <script>
+        document.getElementById('dietForm').addEventListener('submit', function(event) {
+            var proteinChecks = document.querySelectorAll('input[name="likes"][data-type="protein"]:checked').length;
+            var carbChecks = document.querySelectorAll('input[name="likes"][data-type="carb"]:checked').length;
+            var fatChecks = document.querySelectorAll('input[name="likes"][data-type="fat"]:checked').length;
+
+            if (proteinChecks < 3 || proteinChecks > 6 || carbChecks < 3 || carbChecks > 6 || fatChecks < 3 || fatChecks > 6) {
+                alert('Please select between 3 to 6 items from each category.');
+                event.preventDefault();
+            }
+        });
+    </script> -->
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const MAX_SELECTIONS = 4;
+
+            function limitSelections(selectElement) {
+                selectElement.addEventListener('change', function() {
+                    let selectedOptions = Array.from(selectElement.selectedOptions);
+                    if (selectedOptions.length > MAX_SELECTIONS) {
+                        alert('You can select a maximum of ' + MAX_SELECTIONS + ' options.');
+                        selectedOptions.slice(MAX_SELECTIONS).forEach(option => {
+                            option.selected = false;
+                        });
+                    }
+                });
+            }
+
+            // Apply the limit to each select element
+            document.querySelectorAll('.multi-select').forEach(limitSelections);
+        });
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Diet Plan Generator</h2>
+        <form action="/" method="post" class="mb-3">
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" class="form-control">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="diet">Diet Preference:</label>
+                <select id="diet" name="diet" class="form-control">
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="protein_source">Protein Source Preference:</label>
+                <select id="protein_source" name="protein_source[]" class="form-control multi-select" multiple>
+                    <option value="All">All</option>
+                    {% for source in protein_sources %}
+                    <option value="{{ source }}">{{ source }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fat_source">Fat Source Preference:</label>
+                <select id="fat_source" name="fat_source[]" class="form-control multi-select" multiple>
+                    <option value="All">All</option>
+                    {% for source in fat_sources %}
+                    <option value="{{ source }}">{{ source }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="carb_source">Carb Source Preference:</label>
+                <select id="carb_source" name="carb_source[]" class="form-control multi-select" multiple>
+                    <option value="All">All</option>
+                    {% for source in carb_sources %}
+                    <option value="{{ source }}">{{ source }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goal">Fitness Goal:</label>
+                <select id="goal" name="goal" class="form-control">
+                    <option value="Fat Loss">Fat Loss</option>
+                    <option value="Muscle Gain">Muscle Gain</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goal_amount">Target Change per Week (grams):</label>
+                <input type="number" id="goal_amount" name="goal_amount" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="num_meals">Number of Meals:</label>
+                <select id="num_meals" name="num_meals" class="form-control">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generate Diet Plan</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+ -->
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Diet Plan Generator</h2>
+        <form action="/" method="post" class="mb-3">
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" class="form-control">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="diet">Diet Preference:</label>
+                <select id="diet" name="diet" class="form-control">
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="protein_source">Protein Source Preference:</label>
+                <select id="protein_source" name="protein_source" class="form-control" multiple>
+                    <option value="All">All</option>
+                    {% for source in protein_sources %}
+                    <option value="{{ source }}">{{ source }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fat_source">Fat Source Preference:</label>
+                <select id="fat_source" name="fat_source" class="form-control" multiple>
+                    <option value="All">All</option>
+                    {% for source in fat_sources %}
+                    <option value="{{ source }}">{{ source }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="carb_source">Carb Source Preference:</label>
+                <select id="carb_source" name="carb_source" class="form-control" multiple>
+                    <option value="All">All</option>
+                    {% for source in carb_sources %}
+                    <option value="{{ source }}">{{ source }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goal">Fitness Goal:</label>
+                <select id="goal" name="goal" class="form-control">
+                    <option value="Fat Loss">Fat Loss</option>
+                    <option value="Muscle Gain">Muscle Gain</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goal_amount">Target Change per Week (grams):</label>
+                <input type="number" id="goal_amount" name="goal_amount" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="num_meals">Number of Meals:</label>
+                <select id="num_meals" name="num_meals" class="form-control">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generate Diet Plan</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Diet Plan Generator</h2>
+        <form action="/" method="post" class="mb-3">
+            <div class="form-group">
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" class="form-control">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="diet">Diet Preference:</label>
+                <select id="diet" name="diet" class="form-control">
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                </select>
+            </div>
+
+        
+
+            <div class="form-group">
+                <label for="protein_source">Protein Source Preference:</label>
+                <select id="protein_source" name="protein_source" class="form-control">
+                    <option value="All">All</option>
+                    {% for source in protein_sources %}
+                    <option value="{{ source }}">{{ source }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fat_source">Fat Source Preference:</label>
+                <select id="fat_source" name="fat_source" class="form-control">
+                    <option value="All">All</option>
+                    {% for source in fat_sources %}
+                    <option value="{{ source }}">{{ source }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="carb_source">Carb Source Preference:</label>
+                <select id="carb_source" name="carb_source" class="form-control">
+                    <option value="All">All</option>
+                    {% for source in carb_sources %}
+                    <option value="{{ source }}">{{ source }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goal">Fitness Goal:</label>
+                <select id="goal" name="goal" class="form-control">
+                    <option value="Fat Loss">Fat Loss</option>
+                    <option value="Muscle Gain">Muscle Gain</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goal_amount">Target Change per Week (grams):</label>
+                <input type="number" id="goal_amount" name="goal_amount" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="num_meals">Number of Meals:</label>
+                <select id="num_meals" name="num_meals" class="form-control">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generate Diet Plan</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html> 
+
+
+
+
+ -->

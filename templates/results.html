@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diet Plan Results</title>
+</head>
+<body>
+    <h1>Diet Plan</h1>
+    <!-- Display diet plan -->
+    {% for meal, items in diet_plan.items() %}
+        <h2>{{ meal }}</h2>
+        <ul>
+            {% for food, quantity in items.items() %}
+                <li>{{ food }}: {{ quantity }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <h1>User Inputs</h1>
+    <!-- Display user inputs -->
+    <ul>
+        {% for key, value in user_inputs.items() %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Your Personalized Diet Plan</h2>
+        {% if diet_plan %}
+            {% for meal_num, meal_items in diet_plan.items() %}
+                <h4>{{ meal_num }}</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Food Item</th>
+                            <th>Quantity (grams)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food, quantity in meal_items.items() %}
+                        <tr>
+                            <td>{{ food }}</td>
+                            <td>{{ quantity|round(2) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endfor %}
+        {% else %}
+            <!-- Handle the case where diet_plan is None or an error message -->
+            {% if error %}
+                <p>Error: {{ error }}</p>
+            {% else %}
+                <p>No diet plan found. Please fill out the form.</p>
+            {% endif %}
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Your Personalized Diet Plan</h2>
+        {% if diet_plan %}
+            {% for meal_num, meal_items in diet_plan.items() %}
+                <h4>{{ meal_num }}</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Food Item</th>
+                            <th>Quantity (grams)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food, quantity in meal_items.items() %}
+                        <tr>
+                            <td>{{ food }}</td>
+                            <td>{{ quantity|round(2) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endfor %}
+        {% else %}
+            <p>No diet plan found. Please fill out the form.</p>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Your Personalized Diet Plan</h2>
+        {% if diet_plan %}
+            {% for meal_num, meal_items in diet_plan.items() %}
+                <h4>{{ meal_num }}</h4>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Food Item</th>
+                            <th scope="col">Quantity (grams)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food, quantity in meal_items.items() %}
+                            <tr>
+                                <td>{{ food }}</td>
+                                <td>{{ quantity|round(2) }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endfor %}
+        {% else %}
+            <p>There was an issue generating the diet plan. Please try again.</p>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+ -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Your Personalized Diet Plan</h2>
+
+        <div class="text-center mb-4">
+            <h4>Selected Goal: {{ goal }}</h4>
+            <p>Target Change per Week: {{ goal_amount }} grams</p>
+        </div>
+
+        {% for meal_num, meal_items in diet_plan.items() %}
+            <h4>{{ meal_num }}</h4>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Food Item</th>
+                        <th scope="col">Quantity (grams)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for food, quantity in meal_items.items() %}
+                        <tr>
+                            <td>{{ food }}</td>
+                            <td>{{ quantity }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+ -->
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Your Personalized Diet Plan</h2>
+
+        <div class="text-center mb-4">
+            <h4>Selected Goal: {{ goal }}</h4>
+            <p>Target Change per Week: {{ goal_amount }} grams</p>
+        </div>
+
+        {% for meal_num, meal_items in diet_plan.items() %}
+            <h4>Meal {{ meal_num }}</h4>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Food Item</th>
+                        <th scope="col">Quantity (grams)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for food, quantity in meal_items.items() %}
+                        <tr>
+                            <td>{{ food }}</td>
+                            <td>{{ quantity }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+ -->
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Your Personalized Diet Plan</h2>
+
+        <div class="text-center mb-4">
+            <h4>Selected Goal: {{ goal }}</h4>
+            <p>Target Change per Week: {{ goal_amount }} grams</p>
+        </div>
+
+        {% for meal_num, meal_contents in diet_plan.items() %}
+        <div class="mb-4">
+            <h5>Meal {{ meal_num }}</h5>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Food Item</th>
+                        <th scope="col">Quantity (grams)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for food, quantity in meal_contents.items() %}
+                    <tr>
+                        <td>{{ food }}</td>
+                        <td>{{ quantity }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+ -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Your Personalized Diet Plan</h2>
+
+        <div class="text-center mb-4">
+            <h4>Selected Goal: {{ goal }}</h4>
+            <p>Target Change per Week: {{ goal_amount }} grams</p>
+        </div>
+
+        {% for meal_num, meal_contents in diet_plan.items() %}
+        <h3>Meal {{ meal_num }}</h3>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Food Item</th>
+                    <th scope="col">Quantity (grams)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for food, quantity in meal_contents.items() %}
+                <tr>
+                    <td>{{ food }}</td>
+                    <td>{{ quantity }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endfor %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Your Personalized Diet Plan</h2>
+
+        <div class="text-center mb-4">
+            <h4>Selected Goal: {{ goal }}</h4>
+            <p>Target Change per Week: {{ goal_amount }} grams</p>
+        </div>
+
+        {% for meal, foods in diet_plan.items() %}
+        <h3>Meal {{ meal }}</h3>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Food Item</th>
+                    <th scope="col">Quantity (grams)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for food, quantity in foods.items() %}
+                <tr>
+                    <td>{{ food }}</td>
+                    <td>{{ quantity }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endfor %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Your Personalized Diet Plan</h2>
+
+        <div class="text-center mb-4">
+            <h4>Selected Goal: {{ goal }}</h4>
+            <p>Target Change per Week: {{ goal_amount }} grams</p>
+        </div>
+
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Food Item</th>
+                    <th scope="col">Quantity (grams)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for food, quantity in diet_plan.items() %}
+                <tr>
+                    <td>{{ food }}</td>
+                    <td>{{ quantity }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+ -->
